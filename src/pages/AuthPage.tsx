@@ -4,7 +4,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { User, Store, Shield, LogIn, Mail, Lock, UserPlus, ArrowLeft } from "lucide-react";
+import { User, Store, Shield, LogIn, Mail, Lock, UserPlus, ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { DEMO_USERS, type AppRole } from "@/data/mockData";
