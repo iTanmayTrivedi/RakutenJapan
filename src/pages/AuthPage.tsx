@@ -49,6 +49,8 @@ const AuthPage = () => {
   const [displayName, setDisplayName] = useState("");
   const [selectedRole, setSelectedRole] = useState<AppRole>("customer");
   const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
