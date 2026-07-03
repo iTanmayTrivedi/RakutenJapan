@@ -207,7 +207,6 @@ const AuthPage = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     className="pl-10 pr-10 h-11 rounded-xl border-border/60 bg-muted/30 focus:bg-background transition-colors"
-                    minLength={6}
                     required
                   />
                   <button
@@ -219,6 +218,29 @@ const AuthPage = () => {
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
+                {!isLogin && (
+                  <ul className="space-y-1 pt-1">
+                    {passwordRules.map((rule) => {
+                      const met = rule.test(password);
+                      return (
+                        <li
+                          key={rule.key}
+                          className={cn(
+                            "flex items-center gap-2 text-xs transition-colors",
+                            met ? "text-green-600" : "text-muted-foreground"
+                          )}
+                        >
+                          {met ? (
+                            <Check className="h-3.5 w-3.5" />
+                          ) : (
+                            <X className="h-3.5 w-3.5" />
+                          )}
+                          {rule.label}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
               </div>
 
               {!isLogin && (
