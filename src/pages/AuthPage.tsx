@@ -308,7 +308,7 @@ const AuthPage = () => {
               <Button
                 type="submit"
                 className="w-full h-11 rounded-xl text-sm font-bold tracking-wide"
-                disabled={submitting}
+                disabled={submitting || (!isLogin && (!passwordValid || password !== confirmPassword || !confirmPassword))}
               >
                 {submitting ? (
                   <div className="flex items-center gap-2">
