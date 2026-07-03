@@ -348,7 +348,11 @@ const AuthPage = () => {
             {/* Toggle */}
             <div className="text-center">
               <button
-                onClick={() => setIsLogin(!isLogin)}
+                onClick={() => {
+                  setIsLogin(!isLogin);
+                  setConfirmPassword("");
+                  setShowConfirmPassword(false);
+                }}
                 className="text-sm text-primary hover:underline underline-offset-4 transition-colors"
               >
                 {isLogin
