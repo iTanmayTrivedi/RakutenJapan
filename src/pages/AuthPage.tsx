@@ -71,6 +71,17 @@ const AuthPage = () => {
           setSubmitting(false);
           return;
         }
+        const passwordResult = passwordSchema.safeParse(password);
+        if (!passwordResult.success) {
+          toast({ title: "Weak password", description: passwordResult.error.errors[0].message, variant: "destructive" });
+          setSubmitting(false);
+          return;
+        }
+        if (password !== confirmPassword) {
+          toast({ title: "Passwords do not match", variant: "destructive" });
+          setSubmitting(false);
+          return;
+        }
         const { error } = await signUp(email, password, displayName.trim(), selectedRole);
         if (error) {
           toast({ title: "Signup failed", description: error, variant: "destructive" });
