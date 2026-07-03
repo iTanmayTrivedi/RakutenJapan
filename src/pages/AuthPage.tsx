@@ -22,6 +22,22 @@ const roles: { value: AppRole; label: string; icon: typeof User; color: string }
 const roleIcons: Record<AppRole, typeof User> = { customer: User, seller: Store, admin: Shield };
 const roleColors: Record<AppRole, string> = { customer: "text-blue-500", seller: "text-green-500", admin: "text-primary" };
 
+const passwordRules = [
+  { key: "min", label: "At least 8 characters", test: (v: string) => v.length >= 8 },
+  { key: "upper", label: "One uppercase letter", test: (v: string) => /[A-Z]/.test(v) },
+  { key: "lower", label: "One lowercase letter", test: (v: string) => /[a-z]/.test(v) },
+  { key: "number", label: "One number", test: (v: string) => /[0-9]/.test(v) },
+  { key: "special", label: "One special character", test: (v: string) => /[^A-Za-z0-9]/.test(v) },
+];
+
+const passwordSchema = z
+  .string()
+  .min(8, "Password must be at least 8 characters")
+  .regex(/[A-Z]/, "Password must include an uppercase letter")
+  .regex(/[a-z]/, "Password must include a lowercase letter")
+  .regex(/[0-9]/, "Password must include a number")
+  .regex(/[^A-Za-z0-9]/, "Password must include a special character");
+
 const AuthPage = () => {
   const { signIn, signUp, demoSignIn } = useAuth();
   const navigate = useNavigate();
