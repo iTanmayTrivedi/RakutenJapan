@@ -40,7 +40,7 @@
 |:--|:--:|:--|:--:|
 | 👥 User roles | **3** (Customer / Seller / Admin) | 🗄️ Database tables | **10** |
 | 🔒 Application routes | **16** (10 auth-gated) | 🛡️ Row-Level Security policies | **33** |
-| 🌐 UI locales | **EN · 日本語** | ⚡ Edge functions | **1** (Lovable AI) |
+| 🌐 UI locales | **EN · 日本語** | ⚡ Edge functions | **1**  |
 | 🛒 Product catalog | **24 SKUs · 8 categories** | 🎁 Loyalty engine | Points · Coupons · Flash sales |
 | 🤖 AI surfaces | Shopping assistant + SEO copy | 🪪 Auth providers | Email + Google OAuth |
 | 🔁 Order lifecycle states | **5** (pending → delivered) | 📦 Mock-data parity | 100% feature fallback |
