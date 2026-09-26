@@ -12,7 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { DEMO_USERS, type AppRole } from "@/data/mockData";
 import { Separator } from "@/components/ui/separator";
 import { AuthAnimatedPanel } from "@/components/AuthAnimatedPanel";
-import { lovable } from "@/integrations/lovable";
+import { supabase } from "@/integrations/supabase/client";
 
 const roles: { value: AppRole; label: string; icon: typeof User; color: string }[] = [
   { value: "customer", label: "Customer", icon: User, color: "text-blue-500" },
@@ -103,16 +103,13 @@ const AuthPage = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      const result = await lovable.auth.signInWithOAuth("google", {
-        redirect_uri: window.location.origin,
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo: window.location.origin },
       });
-      if (result.error) {
-        toast({ title: "Google sign-in failed", description: String((result.error as Error).message ?? result.error), variant: "destructive" });
-        return;
+      if (error) {
+        toast({ title: "Google sign-in failed", description: error.message, variant: "destructive" });
       }
-      if (result.redirected) return;
-      toast({ title: "Welcome!" });
-      navigate("/");
     } catch (err) {
       console.error("Google sign-in error:", err);
       toast({ title: "Something went wrong", description: "Please try again.", variant: "destructive" });
