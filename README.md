@@ -18,8 +18,7 @@
 </p>
 
 <p>
-  🌐 <a href="https://your-url.com"><b>Live Demo</b></a> ・
-  🎬 <a href="https://youtube.com/your-video"><b>Demo Video</b></a> ・
+  🌐 <a href="https://rakuten.tanmaytrivedi.dev/"><b>Live Demo</b></a> ・
   📖 <a href="https://tanmaytrivedi.dev/projects/rakuten"><b>Case Study</b></a> ・
   💼 <a href="https://linkedin.com/in/tanmaytrivedi"><b>LinkedIn</b></a>
 </p>
