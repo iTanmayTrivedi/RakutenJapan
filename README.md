@@ -20,7 +20,7 @@
 <p>
   🌐 <a href="https://rakuten.tanmaytrivedi.dev/"><b>Live Demo</b></a> ・
   📖 <a href="https://tanmaytrivedi.dev/projects/rakuten"><b>Case Study</b></a> ・
-  💼 <a href="https://linkedin.com/in/tanmaytrivedi"><b>LinkedIn</b></a>
+  💼 <a href="https://linkedin.com/in/itanmaytrivedi"><b>LinkedIn</b></a>
 </p>
 
 <img src="./screenshots/home.png" alt="Rakuten Ichiba homepage with crimson hero, point campaign banner, and category grid" width="100%" />
