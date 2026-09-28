@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/Vite-5-646cff?style=flat-square&logo=vite&logoColor=white" />
   <img src="https://img.shields.io/badge/Tailwind-3-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white" />
   <img src="https://img.shields.io/badge/Supabase-PostgreSQL-3ecf8e?style=flat-square&logo=supabase&logoColor=white" />
-  <img src="https://img.shields.io/badge/Lovable_AI-Gateway-bf0000?style=flat-square" />
+  <img src="https://img.shields.io/badge/Groq-Llama_3.3-bf0000?style=flat-square" />
   <img src="https://img.shields.io/badge/RLS-Enforced-bf0000?style=flat-square&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/i18n-EN_·_日本語-bf0000?style=flat-square" />
 </p>
@@ -63,7 +63,7 @@
 - **PostgreSQL design with 10 tables and 33 RLS policies** enforced at the database layer.
 - **Role-based authorization** with a separate `user_roles` table and `has_role()` SECURITY DEFINER pattern — no privilege-escalation vector.
 - **Internationalization (i18n)** — every visible string ships in Japanese and English; JP is the design-first locale.
-- **Edge-deployed AI** — Supabase Edge Function fronting the Lovable AI Gateway powers the shopping assistant and SEO description generator.
+- **Edge-deployed AI** — Supabase Edge Function fronting the Groq API (Llama 3.3 70B) powers the shopping assistant and SEO description generator.
 - **Resilience-first frontend** — slow-connection fallback, optimistic React Query mutations, persistent mock-data layer when the network is unreachable.
 - **Japanese e-commerce UX research, applied** — point multipliers (`x2`, `x3`), 送料無料 thresholds, 時間限定 flash sales, and seller trust signals over pure price competition.
 
@@ -214,7 +214,7 @@ One-tap login is available on the `/auth` page under **Quick demo access**.
 | **State** | TanStack React Query · React Context (Auth · Cart · Language) |
 | **Routing** | React Router v6 (16 routes, 10 auth-gated) |
 | **Backend** | Supabase — PostgreSQL · Auth · Storage · Edge Functions |
-| **AI** | Supabase Edge Function → Lovable AI Gateway |
+| **AI** | Supabase Edge Function → Groq API (Llama 3.3 70B) |
 | **i18n** | Custom `LanguageProvider` (EN · 日本語) — JP is source of truth |
 | **Testing** | Vitest |
 | **Deployment** | Vercel |
@@ -240,7 +240,7 @@ One-tap login is available on the `/auth` page under **Quick demo access**.
 │  PostgreSQL ── 10 tables · 33 RLS policies · has_role() SD   │
 │  Auth       ── Email + Google · HIBP password protection     │
 │  Storage    ── product-images (public read, seller write)    │
-│  Edge fn    ── ai-chat → Lovable AI Gateway (Gemini / GPT)   │
+│  Edge fn    ── ai-chat → Groq (Llama 3.3 70B)         │
 └──────────────────────────────────────────────────────────────┘
 ```
 
